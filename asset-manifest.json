@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/businext-portal/static/css/main.a8b4ac0c.chunk.css",
-    "main.js": "/businext-portal/static/js/main.e079698b.chunk.js",
-    "main.js.map": "/businext-portal/static/js/main.e079698b.chunk.js.map",
+    "main.js": "/businext-portal/static/js/main.b995bf0e.chunk.js",
+    "main.js.map": "/businext-portal/static/js/main.b995bf0e.chunk.js.map",
     "runtime-main.js": "/businext-portal/static/js/runtime-main.f7accaa5.js",
     "runtime-main.js.map": "/businext-portal/static/js/runtime-main.f7accaa5.js.map",
     "static/js/2.cc844828.chunk.js": "/businext-portal/static/js/2.cc844828.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.f7accaa5.js",
     "static/js/2.cc844828.chunk.js",
     "static/css/main.a8b4ac0c.chunk.css",
-    "static/js/main.e079698b.chunk.js"
+    "static/js/main.b995bf0e.chunk.js"
   ]
 }
