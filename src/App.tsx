@@ -4,14 +4,14 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 const App = () => {
 	return (
 		<div className="app">
-			<BrowserRouter>
+			<BrowserRouter basename="/businext-portal/">
 				<Switch>
 					<Route
 						path="/" exact
 						component={() => <Header title="Welcome"/>}
 					/>
 					<Route
-						path="/insights" exact
+						path="/insights/" exact
 						component={() => <Header title="Search Insights"/>}
 					/>
 				</Switch>

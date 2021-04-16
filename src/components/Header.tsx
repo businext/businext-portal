@@ -71,10 +71,10 @@ const Header = (props: HeaderProps) => {
 				<BusinextLogo />
 			</HeaderBlock>
 			<HeaderBlock align="flex-start" order={1}>
-				<HeaderTitle>{title ?? ""}</HeaderTitle>
+				<HeaderTitle>{title ?? ''}</HeaderTitle>
 			</HeaderBlock>
 			<HeaderBlock align="flex-end" order={3}>
-				<HeaderLink to='/insights'>Search</HeaderLink>
+				<HeaderLink to="/insights/">Search</HeaderLink>
 			</HeaderBlock>
 		</HeaderBar>
 	);
