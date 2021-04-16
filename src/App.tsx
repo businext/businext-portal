@@ -1,9 +1,9 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Header from "./components/Header";
+import Container from 'react-bootstrap/Container';
+import Header from './components/Header';
 import About from './pages/About';
 import Home from './pages/Home';
 import Insights from './pages/Insights';
-import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {

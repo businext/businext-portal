@@ -6,13 +6,13 @@ import Nav from 'react-bootstrap/Nav';
 const Header = (props: RouteComponentProps) => {
 	return (
 		<Navbar>
-			<LinkContainer to="/">
+			<LinkContainer exact to="/">
 				<Navbar.Brand>Businext</Navbar.Brand>
 			</LinkContainer>
-			<LinkContainer to="/about" exact>
+			<LinkContainer exact to="/about">
 				<Nav.Link>About</Nav.Link>
 			</LinkContainer>
-			<LinkContainer to="/insights" exact>
+			<LinkContainer exact to="/insights">
 				<Nav.Link>Insights</Nav.Link>
 			</LinkContainer>
 		</Navbar>
