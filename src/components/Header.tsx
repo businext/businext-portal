@@ -1,86 +1,83 @@
-import React from "react";
 import styled from "styled-components";
 import { Link, withRouter, RouteComponentProps } from "react-router-dom";
-
-const HEADER_HEIGHT = "64px";
+import { JustifyContentProps } from "../styles/types";
+import { colors } from "../styles/colors";
+import { dimensions } from "../styles/dimensions";
 
 const HeaderBar = styled.div`
-  position: absolute;
-  left: 0;
-  top: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
 
-  height: ${HEADER_HEIGHT};
-  width: 100%;
+	height: ${dimensions.headerHeight};
+	line-height: ${dimensions.headerHeight};
+	width: 100%;
 
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-left: 24px;
-  padding-right: 24px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: ${dimensions.pageMargin.side.desktop};
+	padding-right: ${dimensions.pageMargin.side.desktop};
 
-  background: #404040;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	background: #404040;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 const HeaderBlock = styled.div<{
-  weight?: number;
-  align?:
-    | "flex-start"
-    | "flex-end"
-    | "center"
-    | "space-between"
-    | "space-around"
-    | "space-evenly"
-    | "initial"
-    | "inherit";
+	align?: JustifyContentProps;
+	order?: number;
+	weight?: number;
 }>`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: ${({ align }) => align || "inherit"};
-  width: ${({ weight }) => `calc(${weight ?? 1} * 100%)`};
+	order: ${({order}) => order};
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: ${({ align }): JustifyContentProps => align || "inherit"};
+
+	height: ${dimensions.headerHeight};
+	width: ${({ weight }) => `calc(${weight ?? 1} * 100%)`};
+`;
+
+const HeaderLogo = styled(Link)`
+	color: ${colors.logoText};
+	font-size: 32px;
+	font-weight: bolder;
 `;
 
 const HeaderTitle = styled.h1`
-  line-height: ${HEADER_HEIGHT};
-  height: ${HEADER_HEIGHT};
-  margin: 0;
+	font-size: 24px;
 `;
 
-const colours = {
-  primary: "#0097c7",
-};
-
-const Logo = styled.h1`
-  color: ${colours.primary};
-  line-height: ${HEADER_HEIGHT};
-  height: ${HEADER_HEIGHT};
-  margin: 0;
+const HeaderLink = styled(Link)`
+	color: ${colors.fadedText};
+	font-size: 20px;
 `;
 
 const BusinextLogo = () => (
-  <Link to="/">
-    <Logo>businext.ai</Logo>
-  </Link>
+	<HeaderLogo to="/">businext.ai</HeaderLogo>
 );
 
 type HeaderProps = RouteComponentProps & {
-  title?: string;
+	title?: string;
 };
 
 const Header = (props: HeaderProps) => {
-  const { title } = props;
-  return (
-    <HeaderBar>
-      <HeaderBlock align="flex-start">
-        <BusinextLogo />
-      </HeaderBlock>
-      <HeaderBlock align="center">
-        <HeaderTitle>{title ?? ""}</HeaderTitle>
-      </HeaderBlock>
-      <HeaderBlock align="flex-end"></HeaderBlock>
-    </HeaderBar>
-  );
+	const { title } = props;
+	return (
+		<HeaderBar>
+			<HeaderBlock align="center" order={2}>
+				<BusinextLogo />
+			</HeaderBlock>
+			<HeaderBlock align="flex-start" order={1}>
+				<HeaderTitle>{title ?? ""}</HeaderTitle>
+			</HeaderBlock>
+			<HeaderBlock align="flex-end" order={3}>
+				<HeaderLink to='/insights'>Search</HeaderLink>
+			</HeaderBlock>
+		</HeaderBar>
+	);
 };
 
 export default withRouter(Header);
