@@ -1,7 +1,8 @@
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
-import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const Header = (props: RouteComponentProps) => {
 	return (
@@ -12,9 +13,14 @@ const Header = (props: RouteComponentProps) => {
 			<LinkContainer exact to="/about">
 				<Nav.Link>About</Nav.Link>
 			</LinkContainer>
-			<LinkContainer exact to="/insights">
-				<Nav.Link>Insights</Nav.Link>
-			</LinkContainer>
+			<NavDropdown title="Insights" id="basic-nav-dropdown">
+				<LinkContainer exact to="/create">
+					<NavDropdown.Item>Create Insights</NavDropdown.Item>
+				</LinkContainer>
+				<LinkContainer exact to="/insights">
+					<NavDropdown.Item>Search Insights</NavDropdown.Item>
+				</LinkContainer>
+			</NavDropdown>
 		</Navbar>
 	);
 };

@@ -3,7 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Header from './components/Header';
 import About from './pages/About';
 import Home from './pages/Home';
-import Insights from './pages/Insights';
+import CreateInsights from './pages/CreateInsights';
+import SearchInsights from './pages/SearchInsights';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
@@ -15,7 +16,8 @@ const App = () => {
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route exact path="/about" component={About} />
-						<Route exact path="/insights" component={Insights} />
+						<Route path="/create" component={CreateInsights} />
+						<Route path="/insights" component={SearchInsights} />
 						<Route>Page not found!</Route>
 					</Switch>
 				</Container>
