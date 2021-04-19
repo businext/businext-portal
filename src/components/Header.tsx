@@ -13,12 +13,12 @@ const Header = (props: RouteComponentProps) => {
 			<LinkContainer exact to="/about">
 				<Nav.Link>About</Nav.Link>
 			</LinkContainer>
-			<NavDropdown title="Insights" id="basic-nav-dropdown">
-				<LinkContainer exact to="/create">
-					<NavDropdown.Item>Create Insights</NavDropdown.Item>
+			<NavDropdown title="Businesses" id="basic-nav-dropdown">
+				<LinkContainer exact to="/add">
+					<NavDropdown.Item>Add</NavDropdown.Item>
 				</LinkContainer>
-				<LinkContainer exact to="/insights">
-					<NavDropdown.Item>Search Insights</NavDropdown.Item>
+				<LinkContainer exact to="/business">
+					<NavDropdown.Item>Search</NavDropdown.Item>
 				</LinkContainer>
 			</NavDropdown>
 		</Navbar>
