@@ -1,3 +1,6 @@
+# Secrets
+.env
+
 ###############################################################################
 # Copied from the create-react-app template gitignore
 # https://github.com/stackblitz/create-react-app-template/blob/master/.gitignore

@@ -1,18 +1,20 @@
-import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import Navbar from 'react-bootstrap/Navbar';
 
-const DemoHeader = (props: RouteComponentProps) => {
+interface HeaderProps {
+	title: string;
+}
+
+const Header = (props: HeaderProps) => {
+	const { title } = props;
 	return (
-		<Navbar>
-			<LinkContainer exact to="/">
-				<Navbar.Brand>Businext</Navbar.Brand>
+		<Navbar bg="dark" variant="dark">
+			<h1>{title}</h1>
+			<LinkContainer exact to="/" className="ml-auto">
+				<Navbar.Brand bsPrefix="logo">businext</Navbar.Brand>
 			</LinkContainer>
-			{/* <LinkContainer exact to="/">
-				<Nav.Link>Business Lookup</Nav.Link>
-			</LinkContainer> */}
 		</Navbar>
 	);
 };
 
-export default withRouter(DemoHeader);
+export default Header;

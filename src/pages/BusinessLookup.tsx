@@ -1,12 +1,14 @@
 import { gql, useLazyQuery } from '@apollo/client';
 import { useState } from 'react';
-import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import Spinner from 'react-bootstrap/Spinner';
 import { RouteComponentProps } from 'react-router-dom';
 import BusinessForm from '../components/BusinessForm';
 import BusinessInfoContainer from '../components/BusinessInfoContainer';
 import { BusinessInferences, QueryGetBusinessInfoArgs } from '../graphql/generatedTypes';
 import { BusinessQuery } from '../models/Business';
+import Page from '../components/Page';
 
 type GetBusinessInfoParams = QueryGetBusinessInfoArgs;
 type GetBusinessInfoResult = {
@@ -74,27 +76,29 @@ const BusinessLookup = (props: RouteComponentProps) => {
 	};
 
 	return (
-		<div>
-			<h1>Business Lookup</h1>
-			<BusinessForm onSubmit={onSubmit} submitButtonText="Get Insights" />
-			<hr />
-			<Container>
-				{loading && (
-					<div className="d-flex justify-content-center">
-						<Spinner animation="border" />
-					</div>
-				)}
-				{data && (
-					<BusinessInfoContainer
-						business={{
-							name: businessQuery.name,
-							location: businessQuery.location,
-							inferences: data.getBusinessInfo,
-						}}
-					/>
-				)}
-			</Container>
-		</div>
+		<Page title="Business Lookup">
+			<Row className="fill">
+				<Col className="p-3 col-md-4 sidebar">
+					<BusinessForm onSubmit={onSubmit} submitButtonText="Get Insights" />
+				</Col>
+				<Col className="p-3 col-md-8">
+					{loading && (
+						<div className="d-flex fill justify-content-center align-items-center">
+							<Spinner animation="border" role="status" className="loading" />
+						</div>
+					)}
+					{data && (
+						<BusinessInfoContainer
+							business={{
+								name: businessQuery.name,
+								location: businessQuery.location,
+								inferences: data.getBusinessInfo,
+							}}
+						/>
+					)}
+				</Col>
+			</Row>
+		</Page>
 	);
 };
 
