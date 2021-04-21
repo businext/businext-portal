@@ -1,26 +1,27 @@
-import { useState, ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { BusinessQuery } from '../models/Business';
 
 interface BusinessFormProps {
-	onSubmit: (business: BusinessQuery) => void;
+	query: BusinessQuery;
+	onChange?: (query: BusinessQuery) => void;
+	onSubmit: (query: BusinessQuery) => void;
 	submitButtonText: string;
 }
 
 const BusinessForm = (props: BusinessFormProps) => {
-	const { onSubmit, submitButtonText } = props;
+	const { query, onChange, onSubmit, submitButtonText } = props;
 
-	const [business, setBusiness] = useState<BusinessQuery>({
-		name: '',
-		location: '',
-	});
 	const onFormTextChange = (event: ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = event.target;
-		setBusiness({
-			...business,
-			[name]: value,
-		});
+		// TODO
+		if (onChange) {
+			onChange({
+				...query,
+				[name]: value,
+			});
+		}
 	};
 
 	return (
@@ -29,7 +30,7 @@ const BusinessForm = (props: BusinessFormProps) => {
 				<Form.Label>Business Name</Form.Label>
 				<Form.Control
 					name="name"
-					value={business.name}
+					value={query.name}
 					type="text"
 					required
 					placeholder="Name"
@@ -44,7 +45,7 @@ const BusinessForm = (props: BusinessFormProps) => {
 				</Form.Text>
 				<Form.Control
 					name="location"
-					value={business.location}
+					value={query.location}
 					type="text"
 					required
 					placeholder="Location"
@@ -52,7 +53,7 @@ const BusinessForm = (props: BusinessFormProps) => {
 				/>
 			</Form.Group>
 
-			<Button variant="primary" type="button" onClick={(_) => onSubmit(business)}>
+			<Button variant="primary" type="button" onClick={(_) => onSubmit(query)}>
 				{submitButtonText}
 			</Button>
 		</Form>
