@@ -1,27 +1,27 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { BusinessQuery } from '../models/Business';
 
 interface BusinessFormProps {
-	query: BusinessQuery;
-	onChange?: (query: BusinessQuery) => void;
 	onSubmit: (query: BusinessQuery) => void;
 	submitButtonText: string;
 }
 
 const BusinessForm = (props: BusinessFormProps) => {
-	const { query, onChange, onSubmit, submitButtonText } = props;
+	const { onSubmit, submitButtonText } = props;
+
+	const [query, setQuery] = useState<BusinessQuery>({
+		name: '',
+		location: '',
+	});
 
 	const onFormTextChange = (event: ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = event.target;
-		// TODO
-		if (onChange) {
-			onChange({
-				...query,
-				[name]: value,
-			});
-		}
+		setQuery({
+			...query,
+			[name]: value,
+		});
 	};
 
 	return (
