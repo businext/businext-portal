@@ -52,9 +52,9 @@ export const BooleanInferenceContainer = (props: BooleanInferenceContainerProps)
 			<Accordion.Collapse as={Card.Body} eventKey={title} className="p-3">
 				<div>
 					<b>{`${Math.round(percent)}% confidence.`}</b>
-					<p>{imageEvidence ? `${imageEvidence.length} pieces of evidence found.` : 'No evidence found.'}</p>
+					<p className="mb-0">{imageEvidence ? `${imageEvidence.length} pieces of evidence found.` : 'No evidence found.'}</p>
 					{imageEvidence && (
-						<CardDeck className="m-0">
+						<CardDeck className="mx-0 mb-0 mt-3">
 							{imageEvidence.map(
 								(evidence) => <ImageEvidenceCard evidence={evidence} />
 							)}

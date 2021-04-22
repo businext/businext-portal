@@ -26,6 +26,10 @@ hr {
 	background-color: white;
 }
 
+.navbar-text {
+	color: white;
+}
+
 .fill {
     height: 100%;
 	min-height: 100%;
@@ -49,6 +53,14 @@ hr {
 .progress-bar {
 	background-color: #0097C7;
 	color: black;
+}
+
+.btn-primary {
+	background-color: #0097C7;
+}
+
+.bg-dark {
+	background-color: #404040;
 }
 
 .loading {

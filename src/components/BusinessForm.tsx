@@ -40,9 +40,6 @@ const BusinessForm = (props: BusinessFormProps) => {
 
 			<Form.Group>
 				<Form.Label>Business Location</Form.Label>
-				<Form.Text>
-					This can be an address, or the name of a place. Please be as specific as possible.
-				</Form.Text>
 				<Form.Control
 					name="location"
 					value={query.location}
@@ -51,6 +48,9 @@ const BusinessForm = (props: BusinessFormProps) => {
 					placeholder="Location"
 					onChange={onFormTextChange}
 				/>
+				<Form.Text>
+					This can be an address, or the name of a place. Please be as specific as possible.
+				</Form.Text>
 			</Form.Group>
 
 			<Button variant="primary" type="button" onClick={(_) => onSubmit(query)}>
