@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/businext-portal/static/css/main.118cda9b.chunk.css",
-    "main.js": "/businext-portal/static/js/main.c4a9ca9b.chunk.js",
-    "main.js.map": "/businext-portal/static/js/main.c4a9ca9b.chunk.js.map",
+    "main.js": "/businext-portal/static/js/main.f869aa6b.chunk.js",
+    "main.js.map": "/businext-portal/static/js/main.f869aa6b.chunk.js.map",
     "runtime-main.js": "/businext-portal/static/js/runtime-main.b9a90a76.js",
     "runtime-main.js.map": "/businext-portal/static/js/runtime-main.b9a90a76.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/businext-portal/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.6c03eeb7.chunk.js": "/businext-portal/static/js/2.6c03eeb7.chunk.js",
-    "static/js/2.6c03eeb7.chunk.js.map": "/businext-portal/static/js/2.6c03eeb7.chunk.js.map",
+    "static/js/2.1e58265b.chunk.js": "/businext-portal/static/js/2.1e58265b.chunk.js",
+    "static/js/2.1e58265b.chunk.js.map": "/businext-portal/static/js/2.1e58265b.chunk.js.map",
     "static/js/3.918d6130.chunk.js": "/businext-portal/static/js/3.918d6130.chunk.js",
     "static/js/3.918d6130.chunk.js.map": "/businext-portal/static/js/3.918d6130.chunk.js.map",
     "index.html": "/businext-portal/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/businext-portal/static/css/2.4c97ca4f.chunk.css.map",
     "static/css/main.118cda9b.chunk.css.map": "/businext-portal/static/css/main.118cda9b.chunk.css.map",
-    "static/js/2.6c03eeb7.chunk.js.LICENSE.txt": "/businext-portal/static/js/2.6c03eeb7.chunk.js.LICENSE.txt"
+    "static/js/2.1e58265b.chunk.js.LICENSE.txt": "/businext-portal/static/js/2.1e58265b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b9a90a76.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.6c03eeb7.chunk.js",
+    "static/js/2.1e58265b.chunk.js",
     "static/css/main.118cda9b.chunk.css",
-    "static/js/main.c4a9ca9b.chunk.js"
+    "static/js/main.f869aa6b.chunk.js"
   ]
 }
