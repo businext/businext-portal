@@ -11,7 +11,7 @@ const Header = (props: HeaderProps) => {
 		<Navbar bg="dark" variant="dark">
 			<h1>{title}</h1>
 			<LinkContainer exact to="/" className="ml-auto">
-				<Navbar.Brand bsPrefix="logo">businext</Navbar.Brand>
+				<Navbar.Brand bsPrefix="logo">businext.ai</Navbar.Brand>
 			</LinkContainer>
 		</Navbar>
 	);

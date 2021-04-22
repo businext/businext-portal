@@ -42,6 +42,10 @@ hr {
 	background-color: #303030;
 }
 
+.card {
+	background-color: #404040;
+}
+
 .progress-bar {
 	background-color: #0097C7;
 	color: black;
